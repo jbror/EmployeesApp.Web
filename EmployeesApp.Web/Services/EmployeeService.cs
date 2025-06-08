@@ -5,7 +5,7 @@ namespace EmployeesApp.Web.Services;
 public class EmployeeService
 {
 
-    private readonly List<Employee> employee = new()
+    private readonly List<Employee> employees = new()
     {
         new Employee {Id = 1, Name = "Sauron", Email = "sauron_evil@hotmail.com"},
         new Employee {Id = 2, Name = "Yoda", Email = "yodaboy@yahoo.com"},
@@ -14,18 +14,18 @@ public class EmployeeService
     };
 
 
-    public void Employee(Employee employee)
+    public void Add (Employee employee)
     {
-        employee.Add(employee);
+        employees.Add(employee);
     }
 
-    public Employee[] GetAllEmployees()
+    public Employee[] GetAll()
     {
-        return employee.ToArray();
+        return employees.ToArray();
     }
 
 
-    public Employee? GetEmployeeById(int id)
+    public Employee? GetById(int id)
     {
         return employees.FirstOrDefault(e => e.Id == id);
     }
