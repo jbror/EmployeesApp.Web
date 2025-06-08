@@ -8,7 +8,8 @@ public class Employee
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
 
-    [EmailAddress]
+    //[Required]
+    //[EmailAddress]
     public string Email { get; set; } = string.Empty;
 
 
