@@ -10,7 +10,16 @@
 </head>
 <body>
     <main>
-        <h1>Fill in the form to add employee</h1>
+        <h2>Fill in the form to add employee</h2>
+        <form action ="/create" method="post">
+            <label>Name</label>
+            <input type="text" name="Name" />
+            <label>Id</label>
+            <input type="number" name="Id" />
+            <label>Email</label>
+            <input type="email" name="Email" />
+            <input type="submit" value="Create">
+            </form>
     </main>
 </body>
 </html>
