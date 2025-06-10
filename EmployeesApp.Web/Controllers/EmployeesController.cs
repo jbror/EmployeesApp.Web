@@ -19,8 +19,11 @@ public class EmployeesController : Controller
         return View(employees);
     }
 
-
-
+    [HttpGet("create")]
+    public IActionResult Create()
+    {
+        return View();
+    }
 
 
 

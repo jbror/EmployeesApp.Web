@@ -7,7 +7,17 @@
     </head>
     <body>
     <h1>Our Employees</h1>
+    <ul>
+    
 
- <p> hi</p>
+      @foreach (var empl in Model)
+    {
+        <li>@empl.Name</li>
+    }
+    </ul>
+
+ <p>Click on the button to add a new employee! </p>
+    <button>Add employee</button>
+
     </body>
     </html>
