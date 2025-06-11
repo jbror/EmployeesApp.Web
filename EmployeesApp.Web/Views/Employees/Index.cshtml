@@ -1,42 +1,30 @@
 ﻿@model EmployeesApp.Web.Models.Employee[]
-<!DOCTYPE html>
-    <html>
-    <head>
-         <title>Employees - APP</title>
-    <link rel="stylesheet" href="https://unpkg.com/@@picocss/pico@@latest/css/pico.classless.min.css">
-    </head>
-    <body>
-    
-    <main>
-    <h1>Our employees</h1>
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
+@{
+    ViewData["Title"] = "Start";
+}
 
-        </tr>
-</thead>
-<tbody>
-    @foreach (var empl in Model)
-                {
-                    <tr>
-                        <td>@empl.Id</td>
-                        <td>@empl.Name</td>
-                        <td>@empl.Email</td>
-                    </tr>
-                }
-            </tbody>
+    <h1>Our Employees</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var empl in Model)
+            {
+                <tr>
+                    <td>@empl.Id</td>
+                    <td>@empl.Name</td>
+                    <td>@empl.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>Click on the button to add a new employee! </p>
+    <a href="/Create" role="button" class="createbtn">Add</a> @*Ska använda för style senare *@
 
 
-</table>
-
- <p>Click on the button to add a new employee! </p>
- <a href="/Create" role="button" class="createbtn">Add</a> @*Ska använda för style senare *@
-
-
-
-    </main>
-    </body>
-    </html>

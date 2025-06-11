@@ -1,23 +1,13 @@
-﻿<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet"
-          href="https://unpkg.com/@@picocss/pico@@latest/css/pico.classless.min.css">
-    <title>Add Employee</title>
-</head>
-<body>
-    <main>
-        <h2>Fill in the form to add employee</h2>
-        <form action ="/create" method="post">
-            <label>Name</label>
-            <input type="text" name="Name" />
-            <label>Email</label>
-            <input type="email" name="Email" />
-            <input type="submit" value="Create">
-            </form>
-    </main>
-</body>
-</html>
+﻿@model EmployeesApp.Web.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h2>Fill in the form to add employee</h2>
+<form action="/create" method="post">
+    <label>Name</label>
+    <input type="text" name="Name" />
+    <label>Email</label>
+    <input type="email" name="Email" />
+    <input type="submit" value="Create">
+</form>
