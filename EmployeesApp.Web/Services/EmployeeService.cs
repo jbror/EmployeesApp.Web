@@ -16,7 +16,13 @@ public class EmployeeService
 
     public void Add (Employee employee)
     {
+
+        //employees.Add(employee);
+        int employeeId = employees.OrderBy(e => e.Id).Last().Id; 
+        employee.Id = employeeId + 1;
         employees.Add(employee);
+        
+
     }
 
     public Employee[] GetAll()

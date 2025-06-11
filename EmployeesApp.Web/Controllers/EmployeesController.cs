@@ -28,10 +28,11 @@ public class EmployeesController : Controller
     [HttpPost("create")]
     public IActionResult Create(Employee employee)
     {
-        employeeService.Add(employee);
+        
         
         if (ModelState.IsValid)
         {
+            employeeService.Add(employee);
             return RedirectToAction("Index");
         }
         return View();

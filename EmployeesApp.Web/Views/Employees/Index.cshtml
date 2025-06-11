@@ -7,22 +7,36 @@
     </head>
     <body>
     
-
+    <main>
     <h1>Our employees</h1>
-    <ul>
-    
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
 
-      @foreach (var empl in Model)
-    {
-        <li>@empl.Name</li>
-    }
-    </ul>
+        </tr>
+</thead>
+<tbody>
+    @foreach (var empl in Model)
+                {
+                    <tr>
+                        <td>@empl.Id</td>
+                        <td>@empl.Name</td>
+                        <td>@empl.Email</td>
+                    </tr>
+                }
+            </tbody>
+
+
+</table>
 
  <p>Click on the button to add a new employee! </p>
  <a href="/Create" role="button" class="createbtn">Add</a> @*Ska använda för style senare *@
 
-    
 
 
+    </main>
     </body>
     </html>
