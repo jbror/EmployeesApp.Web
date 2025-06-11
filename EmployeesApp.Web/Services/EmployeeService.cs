@@ -12,14 +12,15 @@ public class EmployeeService
         new Employee {Id = 3, Name = "Neo", Email = "neo_03@matrix.com"}
 
     };
-
+    private int nextId = 4; // Första lediga Id
 
     public void Add (Employee employee)
     {
 
         //employees.Add(employee);
-        int employeeId = employees.OrderBy(e => e.Id).Last().Id; 
-        employee.Id = employeeId + 1;
+
+        employee.Id = nextId;
+        nextId++;
         employees.Add(employee);
         
 
