@@ -4,10 +4,29 @@
     ViewData["Title"] = "Create";
 }
 <h2>Fill in the form to add employee</h2>
-<form action="/create" method="post">
+
+
+
+<form asp-action="Create" method="post">
+    <label asp-for="Name"></label>
+    <input asp-for="Name"/>
+    <span asp-validation-for="Name"></span>
+
+    <label asp-for="Email"></label>
+    <input asp-for="Email"/>
+    <span asp-validation-for="Email"></span>
+
+    <input type="submit" value="Create" />
+
+</form>
+
+
+
+
+@* <form action="/create" method="post">
     <label>Name</label>
     <input type="text" name="Name" />
     <label>Email</label>
     <input type="email" name="Email" />
     <input type="submit" value="Create">
-</form>
+</form> *@
