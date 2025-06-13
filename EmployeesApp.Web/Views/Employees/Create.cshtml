@@ -8,11 +8,13 @@
 
 
 <form asp-action="Create" method="post">
-    <label asp-for="Name"></label>
+    
+    
+    <label asp-for="Name">Name</label>
     <input asp-for="Name"/>
     <span asp-validation-for="Name"></span>
 
-    <label asp-for="Email"></label>
+    <label asp-for="Email">Email</label>
     <input asp-for="Email"/>
     <span asp-validation-for="Email"></span>
 
@@ -20,13 +22,9 @@
 
 </form>
 
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@4.0.0/dist/jquery.validate.unobtrusive.min.js"></script>
+}
 
-
-
-@* <form action="/create" method="post">
-    <label>Name</label>
-    <input type="text" name="Name" />
-    <label>Email</label>
-    <input type="email" name="Email" />
-    <input type="submit" value="Create">
-</form> *@
