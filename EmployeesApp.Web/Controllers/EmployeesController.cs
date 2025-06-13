@@ -6,16 +6,17 @@ namespace EmployeesApp.Web.Controllers;
 
 public class EmployeesController : Controller
 {
-    static EmployeeService employeeService = new EmployeeService();
+    private readonly EmployeeService _employeeService;
 
-    public EmployeesController()
+    public EmployeesController(EmployeeService employeeService)
     {
+        _employeeService = employeeService; // Här är jag nu
     }
 
     [HttpGet("")]
     public IActionResult Index()
     {
-        var employees = employeeService.GetAll();
+        var employees = _employeeService.GetAll();
         return View(employees);
     }
 
@@ -32,7 +33,7 @@ public class EmployeesController : Controller
         
         if (ModelState.IsValid)
         {
-            employeeService.Add(employee);
+            _employeeService.Add(employee);
             return RedirectToAction("Index");
         }
         
