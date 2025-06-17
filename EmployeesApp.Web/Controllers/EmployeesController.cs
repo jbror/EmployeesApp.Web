@@ -1,6 +1,7 @@
 ﻿using EmployeesApp.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using EmployeesApp.Web.Models;
+using EmployeesApp.Web.Models.ViewModels;
 
 namespace EmployeesApp.Web.Controllers;
 
@@ -10,35 +11,48 @@ public class EmployeesController : Controller
 
     public EmployeesController(EmployeeService employeeService)
     {
-        _employeeService = employeeService; // Här är jag nu
+        _employeeService = employeeService;
     }
 
     [HttpGet("")]
     public IActionResult Index()
     {
         var employees = _employeeService.GetAll();
-        return View(employees);
+        var viewModels = employees.Select(e => new EmployeeIndexViewModel
+        {
+            Id = e.Id,
+            Name = e.Name,
+            Email = e.Email
+        }).ToList();
+
+
+        return View(viewModels);
     }
 
     [HttpGet("create")]
     public IActionResult Create()
     {
-        return View();
+
+        return View(new EmployeeCreateViewModel());
     }
 
     [HttpPost("create")]
-    public IActionResult Create(Employee employee)
+    public IActionResult Create(EmployeeCreateViewModel vm)
     {
-        
-        
+
         if (ModelState.IsValid)
         {
+            var employee = new Employee
+            {
+              
+                Name = vm.Name,
+                Email = vm.Email
+            };
+
             _employeeService.Add(employee);
             return RedirectToAction("Index");
         }
-        
-        return View();
-
+        return View(vm);
     }
 
 
