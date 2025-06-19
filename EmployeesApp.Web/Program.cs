@@ -30,10 +30,16 @@ namespace EmployeesApp.Web
 // får jag en ny "version" och ser inte det jag lagt til tidigare i den andra "versionen"
 
 
+
 // Registrera service-klassen som en singleton service i Program Lägg nu till en ny anställd - varför syns den nu på index-sidan?:
 
 // För att tillskillnad i från en transient klass så skickas "samma version" av min EmployeeService-klass när jag registrerat den som singleton.
 // Alltså sparas min ändringar i min "version" och samma version skickas med nästa gång jag använder klassen. 
 
 
+
+// Vad har vi vunnit på att använda Dependency Injection istället för att låta controller-klasserna själva instansiera sina beroenden?:
+
+// Det är mycket mer flexibelt. Nu skickas vår EmployeeService-klass med automatiskt och vi kan lätt byta ut den om vi vill. 
+// Nu tilldeelas våra beroende med konstruktorn och vi kan enkelt byta ut till t.ex. en testversion. 
 

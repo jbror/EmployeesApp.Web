@@ -14,7 +14,7 @@ public class EmployeeService
     };
     private int nextId = 4; // Första lediga Id
 
-    public void Add (Employee employee)
+    public void Add(Employee employee)
     {
 
         //employees.Add(employee);
@@ -22,7 +22,7 @@ public class EmployeeService
         employee.Id = nextId;
         nextId++;
         employees.Add(employee);
-        
+
 
     }
 
@@ -36,6 +36,11 @@ public class EmployeeService
     {
         return employees.FirstOrDefault(e => e.Id == id);
     }
+
+
+ 
+
+    
 
 
 

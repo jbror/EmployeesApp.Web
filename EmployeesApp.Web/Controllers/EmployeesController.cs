@@ -17,6 +17,8 @@ public class EmployeesController : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
+
+       
         var employees = _employeeService.GetAll();
         var viewModels = employees.Select(e => new EmployeeIndexViewModel
         {
@@ -56,10 +58,8 @@ public class EmployeesController : Controller
     }
 
 
-
-
-
-
+    
+    
 
 
 
