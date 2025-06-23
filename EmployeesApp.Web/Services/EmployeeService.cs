@@ -2,7 +2,7 @@
 
 namespace EmployeesApp.Web.Services;
 
-public class EmployeeService
+public class EmployeeService : IEmployeeService
 {
 
     private readonly List<Employee> employees = new()
