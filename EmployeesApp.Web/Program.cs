@@ -9,9 +9,10 @@ namespace EmployeesApp.Web
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation(); 
 
-            // builder.Services.AddTransient<EmployeeService>();
+            
 
-            builder.Services.AddSingleton<IEmployeeService, EmployeeService>(); 
+            //builder.Services.AddSingleton<IEmployeeService, EmployeeService>(); // Kör med "original" data
+            builder.Services.AddSingleton<IEmployeeService, OtherEmployeeService>();  // Kör med "test" data
 
 
             var app = builder.Build();
