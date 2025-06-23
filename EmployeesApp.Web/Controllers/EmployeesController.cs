@@ -7,9 +7,9 @@ namespace EmployeesApp.Web.Controllers;
 
 public class EmployeesController : Controller
 {
-    private readonly EmployeeService _employeeService;
+    private readonly IEmployeeService _employeeService;
 
-    public EmployeesController(EmployeeService employeeService)
+    public EmployeesController(IEmployeeService employeeService)
     {
         _employeeService = employeeService;
     }

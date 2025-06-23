@@ -11,7 +11,7 @@ namespace EmployeesApp.Web
 
             // builder.Services.AddTransient<EmployeeService>();
 
-            builder.Services.AddSingleton<EmployeeService>(); 
+            builder.Services.AddSingleton<IEmployeeService, EmployeeService>(); 
 
 
             var app = builder.Build();
